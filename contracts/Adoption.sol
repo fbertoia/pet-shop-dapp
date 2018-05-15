@@ -7,8 +7,8 @@ contract Adoption {
 		adopters[petId] = msg.sender;
 		return petId;
 	}
-	function getAdopters() public returns (address[16]) {
-		return adopters;
+	function getAdopters() public view returns (address[16]) {
+		return adopters; 
 	}
 }
 /* The types of both th e function parameters and output must be specified.
@@ -16,3 +16,11 @@ In this case, we'll be taking in a petId (integer) and returning an integer */
 /* require() statement to ensure the ID is within the range.*/
 /* The address of the person or smart contract who claled this function
 is denoted by msg.sender */
+
+/*If you can make your function pure, you should always make it pure.
+Otherwise, if you can make your function view, you should always make it view.*/
+
+/*  Migrations are javascript files that help you deploy contracts to the
+Ethereum network. These files are responsbile for staging your deployement tasks
+and they're written under the assumption that your deployement needs will
+change over time */
